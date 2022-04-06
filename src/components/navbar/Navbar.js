@@ -1,16 +1,44 @@
 import React from 'react'
+import { Link, NavLink} from "react-router-dom";
+import styles from "./Navbar.module.css";
+
 
 const Navbar = () => {
   return (
-    <div>
-      <div>
-        <a href="/">HOME</a>
-      </div>
-      <div>
-        <a href="/about">ABOUT</a>
-        <a href="https://github.com/clarusway">GITHUB</a>
-        <a href="/login">LOGIN</a>
-      </div>
+    <div className={styles.navbar}>
+        <NavLink 
+        to="/"
+        className={({isActive})=>
+        isActive ? styles.activeStyle: undefined
+        }
+        >
+        HOME
+        </NavLink>
+        <NavLink 
+        to="/about"
+        className={({isActive})=>
+        isActive ? styles.activeStyle: undefined
+        }
+        >
+        ABOUT
+        </NavLink>
+        <a href='https://github.com/mustafatacyildiz'
+        target="_blank"
+        rel="noreferrer"
+        className={({isActive})=>
+        isActive ? styles.activeStyle: undefined
+        }
+        >
+        GITHUB
+        </a>
+        <NavLink 
+        to="/login"
+        className={({isActive})=>
+        isActive ? styles.activeStyle: undefined
+        }
+        >
+        LOGOUT
+        </NavLink>
     </div>
   )
 }
